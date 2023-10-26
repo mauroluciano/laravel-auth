@@ -1,6 +1,9 @@
 @extends('layout.app')
 @section('content')
 <div>
-    @dump($projects)
+    @foreach ($projects as $project)
+          @dump($project)
+  
+    @endforeach
 </div>
 @endsection
