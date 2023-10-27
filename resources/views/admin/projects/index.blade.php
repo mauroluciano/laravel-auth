@@ -12,6 +12,7 @@
         <tbody>
         <td>{{$project->title}}</td>
         <td>{{$project->content}}</td> 
+        <td><a href="{{route('admin.projects.show', $project)}}">Mostra</a></td>
     </tr>
 
 
