@@ -1,49 +1,28 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
-
-    @foreach ($projects as $project)
+<div class='container'>
+    <a href="{{route('admin.projects.create')}}" class="btn btn-primary">Crea uno nuovo</a>
+@foreach ($projects as $project)
     <table class="table table-bordered table-striped m-3">
         <thead>
             <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Content</th>
-              @extends('layouts.app')
-@section('content')
-
-<div class="container">
-
-    @foreach ($projects as $project)
-    <table class="table table-bordered table-striped m-3">
-        <thead>
-            <tr>
-              <th scope="col">Title</th>
-              <th scope="col">Content</th>
-              <th scope="col"></th>
+              <th scope="col">Titolo</th>
+              <th scope="col">Contenuto</th>
+              <th scope="col">Opzioni</th>
 
             </tr>
         </thead>
         <tbody>
         <td>{{$project->title}}</td>
         <td>{{$project->content}}</td> 
-        <td><a href="{{route('admin.projects.show', $project)}}">Mostra</a></td>
+        <td><span><a href="{{route('admin.projects.show', $project)}}">Mostra</a></span>
+            <span><a href="{{route('admin.projects.edit', $project)}}">Modifica</a></span>
+            <span><a href="{{route('admin.projects.destroy', $project)}}">Elimina</a></span>
 
-    </tr>
+        </td>
 
 
-
-</tbody>
-</table> 
-    @endforeach
-</div>
-@endsection
-            </tr>
-        </thead>
-        <tbody>
-        <td>{{$project->title}}</td>
-        <td>{{$project->content}}</td> 
-        <td><a href="{{route('admin.projects.show', $project)}}">Mostra</a></td>
 
     </tr>
 
